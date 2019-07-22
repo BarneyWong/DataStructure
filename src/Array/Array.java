@@ -74,7 +74,7 @@ public class Array<T> {
     //根据索引获取数据
     public T get(int index) {
         if (index < 0 || index >= size) {
-            throw new IllegalArgumentException("Get failed .Index is illegal");
+            throw new IllegalArgumentException("Get failed .Index is illegal.");
         }
         return data[index];
     }
