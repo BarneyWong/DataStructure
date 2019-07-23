@@ -1,7 +1,7 @@
 package Array;
 
 
-//数组可以快速查询
+//数组可以快速查询,随机访问
 public class Array<T> {
     private T[] data;
     private int size;
@@ -38,12 +38,12 @@ public class Array<T> {
         return size == 0;
     }
 
-    //添加第一个元素
+    //添加第一个元素 O(n)
     public void addFirst(T t) {
         add(0, t);
     }
 
-    //添加单个元素
+    //添加单个元素 O(1)
     public void addLast(T t) {
         add(size, t);
     }
@@ -55,7 +55,7 @@ public class Array<T> {
         }
     }
 
-    //在在指定位置插入一个元素
+    //在在指定位置插入一个元素 O(n)
     public void add(int index, T t) {
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Add failed .Required index >=0 and index <=size");
@@ -169,7 +169,7 @@ public class Array<T> {
             throw new IllegalArgumentException("Remove failed ,Index is illegal.");
         }
         //是否需要动态缩容
-        if (size == data.length / 4 && data.length / 4 != 0) {
+        if (size == data.length / 4 && data.length / 2 != 0) {
             reSize(data.length / 2);
         }
         T ret = data[index];
