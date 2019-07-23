@@ -70,7 +70,12 @@ public class Array<T> {
         data[index] = t;
         size++;
     }
-
+    public T getLast(){
+        return get(size-1);
+    }
+    public T getFirst(){
+        return get(0);
+    }
     //根据索引获取数据
     public T get(int index) {
         if (index < 0 || index >= size) {
