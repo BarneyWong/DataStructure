@@ -5,7 +5,7 @@ public interface Queue<T> {
 
     T dequeue();
 
-    T getFont();
+    T getFront();
 
     int getSize();
 

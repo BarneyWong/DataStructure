@@ -23,7 +23,7 @@ public class ArrayQueue<T>  implements  Queue<T>{
     }
 
     @Override
-    public T getFont() {
+    public T getFront() {
         return array.getFirst();
     }
 
