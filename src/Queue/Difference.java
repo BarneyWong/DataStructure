@@ -21,7 +21,9 @@ public class Difference {
     public static void main(String[] args) {
         ArrayQueue<Integer> arrayQueue = new ArrayQueue<Integer>();
         LoopQueue<Integer> loopQueue = new LoopQueue<Integer>();
-        System.out.println("Array's time: "+testQueue(arrayQueue,100000));
-        System.out.println("Loop's time: "+testQueue(loopQueue,100000));
+        LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue<Integer>();
+//        System.out.println("Array's time: "+testQueue(arrayQueue,100000));
+        System.out.println("Loop's time: "+testQueue(loopQueue,10000000));
+        System.out.println("LinkedList's time: "+testQueue(linkedListQueue,10000000));
     }
 }

@@ -1,8 +1,5 @@
 package Stack;
 
-import Linked.LinkedList;
-import Queue.Queue;
-
 import java.util.Random;
 
 public class Difference {
@@ -25,6 +22,6 @@ public class Difference {
         ArrayStack<Integer> arrayStack = new ArrayStack<Integer>();
         LinkedListStack<Integer> linkedListStack = new LinkedListStack<Integer>();
         System.out.println("Array's time: "+testStack(arrayStack,100000));
-        System.out.println("Loop's time: "+testStack(linkedListStack,100000));
+        System.out.println("LinkedList's time: "+testStack(linkedListStack,100000));
     }
 }
