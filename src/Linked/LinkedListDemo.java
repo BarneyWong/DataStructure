@@ -16,5 +16,6 @@ public class LinkedListDemo {
         System.out.println(linkedList);
         linkedList.removeElement(1);
         System.out.println(linkedList);
+        System.out.println(new LinkedList<Integer>(new Integer[]{1,2,3,5,6,8,6,4,9,7}));
     }
 }

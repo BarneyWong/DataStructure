@@ -1,6 +1,5 @@
 package Linked;
 
-import com.sun.xml.internal.bind.marshaller.NoEscapeHandler;
 
 public class LinkedList<T> {
     private class Node {
@@ -34,6 +33,19 @@ public class LinkedList<T> {
         dummyHead = new Node();
         size = 0;
 
+    }
+
+    public LinkedList(T[] array) {
+        if (array == null) {
+            throw new IllegalArgumentException("Array can not be empty");
+        }
+        dummyHead=new Node();
+        Node cur = dummyHead;
+        for(int i=0;i<array.length;i++){
+            cur.next=new Node(array[i]);
+            cur = cur.next;
+            size++;
+        }
     }
 
     public int getSize() {
@@ -149,31 +161,36 @@ public class LinkedList<T> {
         if (isEmpty()) {
             throw new IllegalArgumentException("Remove failed ,LinkedList is empty");
         }
-        Node prev =dummyHead;
-        while (prev!=null){
-            if(prev.next.t.equals(t)){
+        Node prev = dummyHead;
+        while (prev.next != null) {
+            if (prev.next.t.equals(t)) {
                 Node cur = prev.next;
-                prev.next=cur.next;
+                prev.next = cur.next;
                 size--;
-                cur.next=null;
+                cur.next = null;
                 break;
+            } else {
+                prev = prev.next;
             }
-            prev=prev.next;
+
         }
     }
-    public void removeAllElement(T t){
+
+    public void removeAllElement(T t) {
         if (isEmpty()) {
             throw new IllegalArgumentException("Remove failed ,LinkedList is empty");
         }
-        Node prev =dummyHead;
-        while (prev!=null){
-            if(prev.next.t.equals(t)){
+        Node prev = dummyHead;
+        while (prev.next != null) {
+            if (prev.next.t.equals(t)) {
                 Node cur = prev.next;
-                prev.next=cur.next;
+                prev.next = cur.next;
                 size--;
-                cur.next=null;
+                cur.next = null;
+            } else {
+                prev = prev.next;
             }
-            prev=prev.next;
+
         }
     }
 
