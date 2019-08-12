@@ -8,7 +8,7 @@ public class LinkedListDemo {
         System.out.println(linkedList);
 //        linkedList.addFirst(i++);
 //        System.out.println(linkedList);
-        linkedList.addLast(i++);
+        linkedList.addLastWithRecursion(i++);
         System.out.println(linkedList);
         linkedList.add(i,i++);
         System.out.println(linkedList);
@@ -16,6 +16,9 @@ public class LinkedListDemo {
         System.out.println(linkedList);
         linkedList.removeElement(1);
         System.out.println(linkedList);
+        linkedList.addFirst(5);
+        System.out.println(linkedList);
+        System.out.println(linkedList.containsWithRecursion(4));
         System.out.println(new LinkedList<Integer>(new Integer[]{1,2,3,5,6,8,6,4,9,7}));
     }
 }

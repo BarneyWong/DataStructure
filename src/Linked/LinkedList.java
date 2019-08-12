@@ -39,10 +39,10 @@ public class LinkedList<T> {
         if (array == null) {
             throw new IllegalArgumentException("Array can not be empty");
         }
-        dummyHead=new Node();
+        dummyHead = new Node();
         Node cur = dummyHead;
-        for(int i=0;i<array.length;i++){
-            cur.next=new Node(array[i]);
+        for (int i = 0; i < array.length; i++) {
+            cur.next = new Node(array[i]);
             cur = cur.next;
             size++;
         }
@@ -76,9 +76,23 @@ public class LinkedList<T> {
         prev.next = node;
 //            prev.next = new Node(t,prev.next);
         size++;
-
     }
 
+    //递归添加元素
+    public void addLastWithRecursion(T t) {
+        addLastWithRecursion(dummyHead.next, t);
+    }
+
+    private Node addLastWithRecursion(Node node, T t) {
+        if (node == null) {
+            size++;
+            node = new Node(t);
+            return node;
+        } else {
+            node.next = addLastWithRecursion(node.next, t);
+            return node;
+        }
+    }
 
     public void addLast(T t) {
         add(size, t);
@@ -129,9 +143,25 @@ public class LinkedList<T> {
             if (cur.t.equals(t)) {
                 return true;
             }
+            cur=cur.next;
         }
 
         return false;
+    }
+
+    public boolean containsWithRecursion(T t) {
+        return containsWithRecursion(dummyHead.next, t);
+    }
+
+    private boolean containsWithRecursion(Node node, T t) {
+        if (node == null) {
+            return false;
+        }
+        if (t.equals(node.t)) {
+            return true;
+        } else {
+            return containsWithRecursion(node.next, t);
+        }
     }
 
     public T removeFirst() {
